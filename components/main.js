@@ -1,10 +1,8 @@
 window.onload = function(){
   const orangeRange = document.getElementById('js--orangeRange');
   const redRange = document.getElementById('js--redRange');
-  let person = document.getElementsByClassName('js--person');
-
+  var person = document.getElementsByClassName('js--person');
   attachFollowToPerson(person);
-
 
   const callback = function(mutationsList, observer){
     for(let mutation of mutationsList){
@@ -24,6 +22,9 @@ window.onload = function(){
     }
   }
   let observer = new MutationObserver(callback);
+
+
+
   for(let index= 0; index < person.length; index++){
     observer.observe(person[index], {
       attributes: true

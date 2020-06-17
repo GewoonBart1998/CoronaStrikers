@@ -8,6 +8,8 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.9/dist/aframe-particle-system-component.min.js"></script>
     <script src="components\follow.js" type="text/javascript"></script>
+    <script src="components\mutationObserver.js" type="text/javascript"></script>
+    <script src="components\peopleBehaviour.js" type="text/javascript"></script>
 
     <title>Vr Web</title>
   </head>
@@ -72,7 +74,9 @@
       radius="3"></a-cylinder>
 
       <!-- persons -->
-
+      <a-box class="js--person"
+      color="brown"
+      position="9 0.5 -7"></a-box>
 
       <a-box class="js--person"
       color="brown"
