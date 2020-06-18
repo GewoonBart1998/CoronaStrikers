@@ -1,7 +1,7 @@
 var score = 0;
 
-function addPoints(person){
+function addPoints(person, value){
   let scoreboard = document.getElementById('js--score');
-  score += 20;
+  score += value;
   scoreboard.setAttribute('value', "Score: " + String(score));
 }

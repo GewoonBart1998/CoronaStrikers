@@ -44,14 +44,14 @@ function disappearAnimationWithVoice(person){
 }
 
 function personDisappearWithVoice(person){
-  addPoints(person);
+  addPoints(person, 20);
   removeFollowBehaviours(person);
   disappearAnimationWithVoice(person);
   removeEntity(person);
 }
 
 function personDisappearWithHand(person){
-  addPoints(person);
+  addPoints(person, 40);
   removeFollowBehaviours(person);
   disappearAnimationWithHand(person);
   removeEntity(person);
@@ -66,7 +66,7 @@ function hoverShowHand(person){
 
 function createHand(){
   let box = document.createElement('a-box');
-  box.setAttribute('position', "0 0 -0.8");
+  box.setAttribute('position', "0.5 0 -0.8");
   box.setAttribute('color', "yellow");
   box.setAttribute('id', 'js--hover');
   box.setAttribute('scale', "0.1 0.1 0.1");
