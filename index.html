@@ -11,7 +11,7 @@
     <script src="components\follow\mutationObserver.js" type="text/javascript"></script>
     <script src="components\follow\followBehaviour.js" type="text/javascript"></script>
     <script src="components\score.js" type="text/javascript"></script>
-
+    <script src="components\backwards.js" type="text/javascript"></script>
 
     <title>Vr Web</title>
   </head>
@@ -25,10 +25,10 @@
       </a-assets>
 
       <!-- camera -->
-      <a-camera>
+      <a-camera id="js--camera">
         <!-- cursor -->
         <a-entity
-        cursor="fuse: true; fuseTimeout: 2000"
+        cursor="fuse: true; fuseTimeout: 1500"
         material="color: red; shader:flat"
         geometry="primitive: ring; radiusInner: 0.008; radiusOuter:0.015"
         position="0 0 -0.5"
@@ -38,7 +38,7 @@
         id="js--score"
         position="0.1 0.35 -0.5"
         width="1"
-        value="Score: "></a-text>
+        value="Score: 0"></a-text>
       </a-camera>
       <!-- vormgeving -->
       <!-- 1st range -->
