@@ -44,12 +44,14 @@ function disappearAnimationWithVoice(person){
 }
 
 function personDisappearWithVoice(person){
+  addPoints(person);
   removeFollowBehaviours(person);
   disappearAnimationWithVoice(person);
   removeEntity(person);
 }
 
 function personDisappearWithHand(person){
+  addPoints(person);
   removeFollowBehaviours(person);
   disappearAnimationWithHand(person);
   removeEntity(person);
