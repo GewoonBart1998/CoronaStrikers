@@ -1,32 +1,32 @@
 const orangeRange = document.getElementById('js--orangeRange');
 const redRange = document.getElementById('js--redRange');
-var follow = document.getElementsByClassName('js--follow');
+var followers = document.getElementsByClassName('js--follow');
 
-function attachFollowToObject(followObject){
-  for(let index= 0; index < followObject.length; index++){
-    followObjectGoesToOrangeRange(followObject[index]);
+function attachFollowToFollower(followers){
+  for(let index= 0; index < followers.length; index++){
+    followerGoesToOrangeRange(followers[index]);
   }
 }
 
-function followObjectGoesToOrangeRange(followObject){
-  followObject.setAttribute('follow', {
+function followerGoesToOrangeRange(follower){
+  follower.setAttribute('follow', {
     target: '#js--orangeRange',
     speed: 2
   });
 }
 
-function followObjectGoesToRedRange(followObject){
-  if(followObject != undefined){
-    followObject.setAttribute('follow', {
+function followerGoesToRedRange(follower){
+  if(follower != undefined){
+    follower.setAttribute('follow', {
       target: '#js--redRange',
       speed: 1
     });
-    followObject.classList.remove("js--follow");
+    follower.classList.remove("js--follow");
   }
 }
 
-function getFollow(){
-  return follow;
+function getFollowers(){
+  return followers;
 }
 
 function getRedRange(){
