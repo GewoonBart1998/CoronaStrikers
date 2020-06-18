@@ -3,4 +3,5 @@ window.onload = function(){
   observeAttributesOfEntity(getFollowers());
   addPoints(getPeople());
   interactWithPeople(getPeople());
+  speechRecognitionIsSupported();
 };

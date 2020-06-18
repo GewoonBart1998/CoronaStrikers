@@ -1,6 +1,4 @@
-const orangeRange = document.getElementById('js--orangeRange');
-const redRange = document.getElementById('js--redRange');
-var followers = document.getElementsByClassName('js--follow');
+const followers = document.getElementsByClassName('js--follow');
 
 function attachFollowToFollower(followers){
   for(let index= 0; index < followers.length; index++){
@@ -11,7 +9,7 @@ function attachFollowToFollower(followers){
 function followerGoesToOrangeRange(follower){
   follower.setAttribute('follow', {
     target: '#js--orangeRange',
-    speed: 2
+    speed: 0.8
   });
 }
 
@@ -27,12 +25,4 @@ function followerGoesToRedRange(follower){
 
 function getFollowers(){
   return followers;
-}
-
-function getRedRange(){
-  return redRange;
-}
-
-function getOrangeRange(){
-  return orangeRange;
 }

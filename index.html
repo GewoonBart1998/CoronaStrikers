@@ -11,7 +11,8 @@
     <script src="components\follow\followObserver.js" type="text/javascript"></script>
     <script src="components\follow\followBehaviour.js" type="text/javascript"></script>
     <script src="components\score.js" type="text/javascript"></script>
-    <script src="components\raycastBehaviour.js" type="text/javascript"></script>
+    <script src="components\raycast\raycastBehaviour.js" type="text/javascript"></script>
+    <script src="components\raycast\voiceRecognition.js" type="text/javascript"></script>
 
     <title>Vr Web</title>
   </head>
@@ -21,14 +22,15 @@
 
       <!-- assets -->
       <a-assets>
-        <img id="sky" src="/image/sky.jpg" alt="sky afbeelding">
+        <img id="sky" src="/images/sky.jpg" alt="sky afbeelding">
       </a-assets>
 
       <!-- camera -->
       <a-camera id="js--camera">
         <!-- cursor -->
         <a-entity
-        cursor="fuse: true; fuseTimeout: 1500"
+        id="js--cursor"
+        cursor="fuse: true; fuseTimeout: 500"
         material="color: red; shader:flat"
         geometry="primitive: ring; radiusInner: 0.008; radiusOuter:0.015"
         position="0 0 -0.5"
@@ -89,12 +91,9 @@
       color="brown"
       position="0 0.5 -8"></a-box>
 
-
       <a-box class="js--person js--follow"
       color="brown"
       position="-9 0.5 -7"></a-box>
-
-
 
     </a-scene>
   </body>
