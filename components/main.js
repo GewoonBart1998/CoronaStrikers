@@ -1,4 +1,4 @@
 window.onload = function(){
-  attachFollowToPerson(getPerson());
-  observeAttributesOfEntity(getPerson());
+  attachFollowToObject(getFollow());
+  observeAttributesOfEntity(getFollow());
 };

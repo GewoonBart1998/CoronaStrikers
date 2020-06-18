@@ -7,9 +7,9 @@
     <script src="components\main.js" type="text/javascript"></script>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.9/dist/aframe-particle-system-component.min.js"></script>
-    <script src="components\follow.js" type="text/javascript"></script>
-    <script src="components\mutationObserver.js" type="text/javascript"></script>
-    <script src="components\peopleBehaviour.js" type="text/javascript"></script>
+    <script src="components\follow\followComponent.js" type="text/javascript"></script>
+    <script src="components\follow\mutationObserver.js" type="text/javascript"></script>
+    <script src="components\follow\followBehaviour.js" type="text/javascript"></script>
 
     <title>Vr Web</title>
   </head>
@@ -32,6 +32,11 @@
         position="0 0 -0.5"
         raycaster="objects: .js--; showLine: true; far: 100" line="color: orange; opacity: 0.5">
         </a-entity>
+        <a-text
+        position="0.1 0.35 -0.5"
+        width="1"
+
+        value="Score: "></a-text>
       </a-camera>
       <!-- vormgeving -->
       <!-- 1st range -->
@@ -78,9 +83,16 @@
       color="brown"
       position="9 0.5 -7"></a-box>
 
-      <a-box class="js--person js-follow"
+      <a-box class="js--person js--follow"
       color="brown"
       position="0 0.5 -8"></a-box>
+
+
+      <a-box class="js--person js--follow"
+      color="brown"
+      position="-9 0.5 -7"></a-box>
+
+
 
     </a-scene>
   </body>
