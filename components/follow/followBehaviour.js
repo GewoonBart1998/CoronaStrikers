@@ -1,6 +1,5 @@
 const orangeRange = document.getElementById('js--orangeRange');
 const redRange = document.getElementById('js--redRange');
-var person = document.getElementsByClassName('js--person');
 var follow = document.getElementsByClassName('js--follow');
 
 function attachFollowToObject(followObject){
@@ -17,20 +16,13 @@ function followObjectGoesToOrangeRange(followObject){
 }
 
 function followObjectGoesToRedRange(followObject){
-  let person = getPerson();
-  for(let index = 0; index < person.length; index++ ){
-    if(person[index].classList.contains('js--follow')){
-      followObject.setAttribute('follow', {
-        target: '#js--redRange',
-        speed: 1
-      });
-      followObject.classList.remove("js--follow");
-    }
+  if(followObject != undefined){
+    followObject.setAttribute('follow', {
+      target: '#js--redRange',
+      speed: 1
+    });
+    followObject.classList.remove("js--follow");
   }
-}
-
-function getPerson(){
-  return person;
 }
 
 function getFollow(){

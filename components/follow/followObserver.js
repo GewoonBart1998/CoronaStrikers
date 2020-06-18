@@ -1,15 +1,6 @@
-const callback = function(mutationsList, observer){
-  for(let mutation of mutationsList){
-    if(mutation.type == 'attributes'){
-      changeFollow(getFollow());
-    }
-  }
-}
-
-var observer = new MutationObserver(callback);
-var config = {
-  attributes: true
-}
+const callback = function(mutationsList, observer){ callWhenAttributeChanges(mutationsList, observer); };
+const observer = new MutationObserver(callback);
+const config = { attributes: true };
 
 function observeAttributesOfEntity(followObject){
   for(let index= 0; index < followObject.length; index++){
@@ -23,6 +14,14 @@ function changeFollow(followObject){
       setTimeout(function(){
         followObjectGoesToRedRange(followObject[index])
       }, 3500);
+    }
+  }
+}
+
+function callWhenAttributeChanges(mutationsList, observer){
+  for(let mutation of mutationsList){
+    if(mutation.type == 'attributes'){
+      changeFollow(getFollow());
     }
   }
 }
