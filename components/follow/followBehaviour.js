@@ -1,4 +1,4 @@
-const followers = document.getElementsByClassName('js--follow');
+var followers = document.getElementsByClassName('js--follow');
 
 function attachFollowToFollower(followers){
   for(let index= 0; index < followers.length; index++){

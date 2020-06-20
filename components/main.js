@@ -1,5 +1,6 @@
 window.onload = function(){
-  attachFollowToFollower(getFollowers());
+  spawnEnemys();
+  // attachFollowToFollower(getFollowers());
   observeAttributesOfEntity(getFollowers());
   interactWithPeople(getPeople());
   speechRecognitionIsSupported();
