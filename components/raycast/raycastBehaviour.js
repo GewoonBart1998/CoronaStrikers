@@ -1,12 +1,9 @@
-const people = document.getElementsByClassName('js--person');
 const durationWalk = 2000;
 
-function interactWithPeople(people){
-  for(let index= 0; index < people.length; index++){
-    whenDetectedRedRangeField(people[index]);
-    hoverShowHand(people[index]);
-    hoverHandDisappear(people[index]);
-  }
+function interactWithPeople(person){
+  whenDetectedRedRangeField(person);
+  hoverShowHand(person);
+  hoverHandDisappear(person);
 }
 
 function whenDetectedRedRangeField(person){
@@ -91,8 +88,4 @@ function removeEntity(person){
   setTimeout(function(){
       person.remove();
   }, durationWalk);
-}
-
-function getPeople(){
-  return people;
 }

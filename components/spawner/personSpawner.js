@@ -5,6 +5,7 @@ function createPerson(){
   createPerson.setAttribute('class', 'js--person');
   createPerson.setAttribute('position', personX.toString() + " 0.5 " + personZ.toString());
   createPerson.setAttribute('color', 'black');
+  createPerson.setAttribute('person', '');
   createPerson.setAttribute('range', '');
   createPerson.setAttribute('observe', '');
 
