@@ -35,6 +35,8 @@
         material="color: red; shader:flat"
         geometry="primitive: ring; radiusInner: 0.008; radiusOuter:0.015"
         position="0 0 -0.5"
+        animation__click = "property: scale; startEvents: fusing; easing: easeOutCubic; dur: 500; from: 1 1 1; to: 1.4 1.4 1.4"
+        animation__mouseleave = "property: scale; startEvents: mouseleave; easing: easeOutCubic; dur: 500; to: 1 1 1"
         raycaster="objects: .js--person">
         </a-entity>
         <a-text
