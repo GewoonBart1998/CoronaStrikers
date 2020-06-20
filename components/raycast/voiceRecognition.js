@@ -33,7 +33,7 @@ function startVoiceRecognition(){
 
 function speechRecognitionIsSupported(){
   if ('SpeechRecognition' in window) {
-    console.log('Speech recognition supported 😊');
+    console.log('Speech recognition supported😊');
     startVoiceRecognition();
 
     return;
