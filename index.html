@@ -34,14 +34,22 @@
         material="color: red; shader:flat"
         geometry="primitive: ring; radiusInner: 0.008; radiusOuter:0.015"
         position="0 0 -0.5"
-        raycaster="objects: .js--person">
+        raycaster="objects: .js--option">
         </a-entity>
         <a-text
+        visible="false"
         id="js--score"
         position="0.1 0.35 -0.5"
         width="1"
         value="Score: 0"></a-text>
       </a-camera>
+
+      <a-entity id="menuScene" visible="true">
+          <a-text class="js--option" value="Start" scale="2 2 1" position="0 2 -4"></a-text>
+          <a-text class="js--option" value="Uitleg" scale="2 2 1" position="-4 2 -4"></a-text>
+          <a-text class="js--option" value="Tutorial" scale="2 2 1" position="4 2 -4"></a-text>
+      </a-entity>
+
       <!-- vormgeving -->
       <!-- 1st range -->
       <a-ring
@@ -66,34 +74,35 @@
 
       <!-- raining particle -->
       <!--<a-entity id="rain" particle-system="preset: rain; color: #24CAFF; particleCount: 150"></a-entity> -->
+      <a-entity id="gameScene" visible="false">
+        <!-- collision objects -->
+        <a-cylinder
+        id="js--redRange"
+        position="0 0.5 0"
+        visible="false"
+        scale="1 0.1 1"
+        radius="1"></a-cylinder>
 
-      <!-- collision objects -->
-      <a-cylinder
-      id="js--redRange"
-      position="0 0.5 0"
-      visible="false"
-      scale="1 0.1 1"
-      radius="1"></a-cylinder>
+        <a-cylinder
+        id="js--orangeRange"
+        position="0 0.5 0"
+        visible="false"
+        scale="1 0.1 1"
+        radius="3"></a-cylinder>
 
-      <a-cylinder
-      id="js--orangeRange"
-      position="0 0.5 0"
-      visible="false"
-      scale="1 0.1 1"
-      radius="3"></a-cylinder>
+        <!-- persons -->
+        <a-box class="js--person js--follow"
+        color="brown"
+        position="9 0.5 -7"></a-box>
 
-      <!-- persons -->
-      <a-box class="js--person js--follow"
-      color="brown"
-      position="9 0.5 -7"></a-box>
+        <a-box class="js--person js--follow"
+        color="brown"
+        position="0 0.5 -8"></a-box>
 
-      <a-box class="js--person js--follow"
-      color="brown"
-      position="0 0.5 -8"></a-box>
-
-      <a-box class="js--person js--follow"
-      color="brown"
-      position="-9 0.5 -7"></a-box>
+        <a-box class="js--person js--follow"
+        color="brown"
+        position="-9 0.5 -7"></a-box>
+    </a-entity>
 
     </a-scene>
   </body>
