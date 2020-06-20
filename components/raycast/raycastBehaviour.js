@@ -28,10 +28,6 @@ function whenDetectedRedRangeField(person){
   });
 }
 
-function resetCorrectWordAfterRightGuess(){
-
-}
-
 function disappearAnimationWithVoice(person){
   let scalingAnimation = document.createAttribute('animation');
   scalingAnimation.value = "property: scale; easing: linear; dur: " +
@@ -88,7 +84,6 @@ function disappearAnimationWithHand(person){
 }
 
 function removeFollowBehaviours(person){
-  person.classList.remove('js--follow');
   person.removeAttribute('follow');
 }
 
