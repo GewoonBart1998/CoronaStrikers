@@ -1,7 +1,6 @@
 window.onload = function(){
-  spawnEnemys();
-  // attachFollowToFollower(getFollowers());
-  observeAttributesOfEntity(getFollowers());
-  interactWithPeople(getPeople());
+  setInterval(function(){
+    addPerson(createPerson());
+  }, 5000);
   speechRecognitionIsSupported();
 };

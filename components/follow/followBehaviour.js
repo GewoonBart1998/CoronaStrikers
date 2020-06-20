@@ -1,9 +1,15 @@
-var followers = document.getElementsByClassName('js--follow');
-
-function attachFollowToFollower(followers){
-  for(let index= 0; index < followers.length; index++){
-    followerGoesToOrangeRange(followers[index]);
+AFRAME.registerComponent('range', {
+  init: function () {
+    followerGoesToOrangeRange(this.el);
   }
+});
+
+function changeFollowDestination(follower){
+    if(!follower.hasAttribute('follow')){
+      setTimeout(function(){
+        followerGoesToRedRange(follower);
+      }, 3500);
+    }
 }
 
 function followerGoesToOrangeRange(follower){
@@ -19,10 +25,5 @@ function followerGoesToRedRange(follower){
       target: '#js--redRange',
       speed: 1
     });
-    follower.classList.remove("js--follow");
   }
-}
-
-function getFollowers(){
-  return followers;
 }
