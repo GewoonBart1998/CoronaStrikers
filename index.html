@@ -7,13 +7,13 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.9/dist/aframe-particle-system-component.min.js"></script>
     <script src="components\follow\followComponent.js" type="text/javascript"></script>
-    <script src="components\observer\observerComponent.js" type="text/javascript"></script>
     <script src="components\follow\followBehaviour.js" type="text/javascript"></script>
-    <script src="components\score.js" type="text/javascript"></script>
+    <script src="components\observer\observerComponent.js" type="text/javascript"></script>
     <script src="components\raycast\raycastBehaviour.js" type="text/javascript"></script>
     <script src="components\raycast\voiceRecognition.js" type="text/javascript"></script>
-    <script src="components\spawner\personSpawner.js" type="text/javascript"></script>
-    <script src="components\raycast\personComponent.js" type="text/javascript"></script>
+    <script src="components\person\personSpawner.js" type="text/javascript"></script>
+    <script src="components\person\personComponent.js" type="text/javascript"></script>
+    <script src="components\score.js" type="text/javascript"></script>
 
     <title>Vr Web</title>
   </head>
@@ -23,6 +23,14 @@
 
       <!-- assets -->
       <a-assets>
+        <a-assets-item id="hand-obj" src="models\hand.obj"></a-assets-item>
+        <a-assets-item id="hart-obj" src="models\hart.obj"></a-assets-item>
+        <a-assets-item id="landschap-obj" src="models\landschap.obj"></a-assets-item>
+        <a-assets-item id="landschap-mtl" src="models\landschap.mtl"></a-assets-item>
+        <a-assets-item id="tree-obj" src="models\tree.obj"></a-assets-item>
+        <a-assets-item id="tree-mtl" src="models\tree.mtl"></a-assets-item>
+        <a-assets-item id="treeTwo-obj" src="models\treeTwo.obj"></a-assets-item>
+        <a-assets-item id="treeTwo-mtl" src="models\treeTwo.mtl"></a-assets-item>
         <img id="sky" src="/images/sky.jpg" alt="sky afbeelding">
       </a-assets>
 
@@ -35,15 +43,23 @@
         material="color: red; shader:flat"
         geometry="primitive: ring; radiusInner: 0.008; radiusOuter:0.015"
         position="0 0 -0.5"
-        animation__click = "property: scale; startEvents: fusing; easing: easeOutCubic; dur: 500; from: 1 1 1; to: 1.4 1.4 1.4"
+        animation__click = "property: scale; startEvents: mouseenter; easing: easeOutCubic; dur: 500; from: 1 1 1; to: 1.4 1.4 1.4"
         animation__mouseleave = "property: scale; startEvents: mouseleave; easing: easeOutCubic; dur: 500; to: 1 1 1"
         raycaster="objects: .js--person">
         </a-entity>
+
         <a-text
         id="js--score"
-        position="0.1 0.35 -0.5"
+        position="0.3 0.35 -0.5"
         width="1"
         value="Score: 0"></a-text>
+
+        <!-- health points -->
+        <a-entity position="0 0 0">
+          <a-obj-model src="#hart-obj" color="red" rotation="0 90 0" position="-0.72 0.64 -1" scale="0.1 0.1 0.1"></a-obj-model>
+          <a-obj-model src="#hart-obj" color="red" position="-0.55 0.7 -1" rotation="0 90 0" scale="0.025 0.05 0.05"></a-obj-model>
+          <a-obj-model src="#hart-obj" color="red" position="-0.55 0.58 -1" rotation="0 90 0" scale="0.025 0.05 0.05"></a-obj-model>
+        </a-entity>
       </a-camera>
       <!-- vormgeving -->
       <!-- 1st range -->
@@ -66,6 +82,9 @@
       width="16"
       height="16"
       color="#7BC8A4"></a-plane>
+
+      <a-obj-model src="#tree-obj" mtl="#tree-mtl" position="0 -0.5 -4"></a-obj-model>
+
 
       <!-- raining particle -->
       <!--<a-entity id="rain" particle-system="preset: rain; color: #24CAFF; particleCount: 150"></a-entity> -->

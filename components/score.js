@@ -5,3 +5,7 @@ function addPoints(person, value){
   score += value;
   scoreboard.setAttribute('value', "Score: " + String(score));
 }
+
+function addHearts(){
+  
+}

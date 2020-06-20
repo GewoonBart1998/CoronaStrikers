@@ -58,11 +58,13 @@ function hoverShowHand(person){
 }
 
 function createHand(){
-  let box = document.createElement('a-box');
-  box.setAttribute('position', "0.5 0 -0.8");
-  box.setAttribute('color', "yellow");
+  let box = document.createElement('a-obj-model');
+  box.setAttribute('src', '#hand-obj');
+  box.setAttribute('color', 'white');
+  box.setAttribute('rotation', '0 90 60');
+  box.setAttribute('position', "0.4 -0.15 -0.8");
   box.setAttribute('id', 'js--hover');
-  box.setAttribute('scale', "0.1 0.1 0.1");
+  box.setAttribute('scale', "0.05 0.05 0.05");
 
   return box;
 }
