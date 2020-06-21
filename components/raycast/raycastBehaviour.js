@@ -88,6 +88,8 @@ function removeFollowBehaviours(person){
 
 function removeEntity(person){
   setTimeout(function(){
+    try{
       person.remove();
+    }catch(error){}
   }, durationWalk);
 }

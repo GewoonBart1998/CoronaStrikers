@@ -5,11 +5,15 @@ AFRAME.registerComponent('range', {
 });
 
 function changeFollowDestination(follower){
+  if(follower.hasAttribute('range')){
     if(!follower.hasAttribute('follow')){
       setTimeout(function(){
         followerGoesToRedRange(follower);
       }, 3500);
+      follower.removeAttribute('range');
+      addDamageComponent(follower, 'depletion: No Damage');
     }
+  }
 }
 
 function followerGoesToOrangeRange(follower){

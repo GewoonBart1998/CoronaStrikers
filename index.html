@@ -19,7 +19,8 @@
   </head>
   <body>
     <!-- scene -->
-    <a-scene id="main-scene" background="color:blue">
+    <a-scene id="main-scene">
+      <a-sky src="#sky"></a-sky>
 
       <!-- assets -->
       <a-assets>
@@ -56,9 +57,9 @@
 
         <!-- health points -->
         <a-entity position="0 0 0">
-          <a-obj-model src="#hart-obj" color="red" rotation="0 90 0" position="-0.72 0.64 -1" scale="0.1 0.1 0.1"></a-obj-model>
-          <a-obj-model src="#hart-obj" color="red" position="-0.55 0.7 -1" rotation="0 90 0" scale="0.025 0.05 0.05"></a-obj-model>
-          <a-obj-model src="#hart-obj" color="red" position="-0.55 0.58 -1" rotation="0 90 0" scale="0.025 0.05 0.05"></a-obj-model>
+          <a-obj-model class="heart" src="#hart-obj" color="red" rotation="0 90 0" position="-0.72 0.64 -1" scale="0.1 0.1 0.1"></a-obj-model>
+          <a-obj-model class="heart" src="#hart-obj" color="red" position="-0.55 0.7 -1" rotation="0 90 0" scale="0.025 0.05 0.05"></a-obj-model>
+          <a-obj-model class="heart" src="#hart-obj" color="red" position="-0.55 0.58 -1" rotation="0 90 0" scale="0.025 0.05 0.05"></a-obj-model>
         </a-entity>
       </a-camera>
       <!-- vormgeving -->
@@ -83,7 +84,10 @@
       height="16"
       color="#7BC8A4"></a-plane>
 
-      <a-obj-model src="#tree-obj" mtl="#tree-mtl" position="0 -0.5 -4"></a-obj-model>
+      <a-obj-model src="#tree-obj" mtl="#tree-mtl" position="5.5 -1 -5"></a-obj-model>
+      <a-obj-model src="#tree-obj" mtl="#tree-mtl" position="-5.5 -1 -5"></a-obj-model>
+      <a-obj-model src="#tree-obj" mtl="#tree-mtl" position="5.5 -1 5"></a-obj-model>
+      <a-obj-model src="#tree-obj" mtl="#tree-mtl" position="-5.5 -1 5"></a-obj-model>
 
 
       <!-- raining particle -->

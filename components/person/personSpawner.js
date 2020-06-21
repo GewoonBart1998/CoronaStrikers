@@ -1,3 +1,5 @@
+var spawn = null;
+
 function createPerson(){
   let createPerson = document.createElement('a-box');
   let personX = generateSpawnLocation(-10, 10);
@@ -22,4 +24,27 @@ function generateSpawnLocation(min, max) {
 
 function generateSpawnTimer(min, max) {
   return Math.floor(min + Math.random()*(max + 1 - min))
+}
+
+function createSpawner(){
+  spawn = setInterval(function(){
+    addPerson(createPerson());
+  }, 5000);
+}
+
+function deleteAllPeople(){
+  let people = document.getElementsByClassName('js--person');
+  for(let index = 0; index < people.length; index++){
+    disappearAnimationWithHand(people[index]);
+    removeEntity(people[index]);
+  }
+}
+
+function stopSpawner(){
+  deleteAllPeople();
+  clearInterval(getSpawn());
+}
+
+function getSpawn(){
+  return spawn;
 }

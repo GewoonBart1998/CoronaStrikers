@@ -19,6 +19,9 @@ AFRAME.registerComponent('follow', {
     let distance = directionVec3.length();
 
     if (distance < radius) {
+      if(this.el.hasAttribute('damage')){
+        addDamageComponent(this.el, 'depletion: Remove Heart');
+      }
       this.el.removeAttribute('follow');
 
       return;
