@@ -1,5 +1,5 @@
 var spawn = null;
-var spawnDuration = 5000;
+const spawnDuration = 5000;
 
 function createPerson(){
   let createPerson = document.createElement('a-box');
@@ -67,4 +67,8 @@ function stopSpawner(){
 
 function getSpawn(){
   return spawn;
+}
+
+function setSpawnDuration(milliseconds){
+  spawnDuration = milliseconds;
 }

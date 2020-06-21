@@ -6,7 +6,7 @@ var recognition = new SpeechRecognition();
 var speechRecognitionList = new SpeechGrammarList();
 var spacing = [ 'afstand' , 'Corona' , 'stop', 'anderhalve meter', 'bent u nou helemaal betoeterd'];
 var correctWord = false;
-
+var spokenWord = "";
 
 function createList(){
 
@@ -46,22 +46,45 @@ recognition.onstart = function() {
 };
 
 recognition.onresult = function(event){
-  let spokenWord = event.results[0][0].transcript;
-  document.getElementById('voice').setAttribute('value', 'Spoken word: ' + spokenWord);
+  spokenWord = event.results[0][0].transcript;
+  updateVoiceText(spokenWord);
   for(let index = 0; index < spacing.length; index++){
     if(spokenWord == spacing[index]){
-      spokenWord = "";
-      correctWord = true;
+      changePlaneColorOfPlayersUIWhenCorrect();
+      setSpokenWord("");
+      setCorrectWord(true);
 
       return;
     }
-    correctWord = false;
+    changePlaneColorOfPlayersUIWhenWrong();
+    setCorrectWord(false);
   }
 }
 
 recognition.onend = function() {
-  console.log("recording has stopped");
   recognition.start();
+}
+
+function updateVoiceText(spokenWord){
+  let voiceText = document.getElementById('voice');
+  voiceText.setAttribute('value', 'Spoken word: ' + spokenWord);
+}
+
+function changePlaneColorOfPlayersUIWhenCorrect(){
+  let voicePlane = document.getElementById('voice-plane');
+  voicePlane.setAttribute('material', 'shader: flat; color: yellow');
+}
+
+function changePlaneColorOfPlayersUIWhenWrong(){
+  let voicePlane = document.getElementById('voice-plane');
+  voicePlane.setAttribute('material', 'shader: flat; color: red');
+}
+
+function changePlaneColorOfPlayersUIWhenNeutral(spokenWord){
+
+  voicePlane.setAttribute('material', 'shader: flat; color: white');
+  setSpokenWord("");
+  updateVoiceText(getSpokenWord());
 }
 
 function getCorrectWord(){
@@ -70,4 +93,12 @@ function getCorrectWord(){
 
 function setCorrectWord(word){
   correctWord = word;
+}
+
+function setSpokenWord(word){
+  spokenWord = word;
+}
+
+function getSpokenWord(){
+  return spokenWord;
 }

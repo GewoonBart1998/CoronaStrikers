@@ -41,6 +41,7 @@ function personDisappearWithVoice(person){
   removeFollowBehaviours(person);
   disappearAnimationWithVoice(person);
   removeEntity(person);
+  changePlaneColorOfPlayersUIWhenNeutral();
 }
 
 function personDisappearWithHand(person){
@@ -58,28 +59,28 @@ function hoverShowHand(person){
 }
 
 function createHand(){
-  let box = document.createElement('a-obj-model');
-  box.setAttribute('src', '#hand-obj');
-  box.setAttribute('color', 'white');
-  box.setAttribute('rotation', '0 90 60');
-  box.setAttribute('position', "0.4 -0.15 -0.8");
-  box.setAttribute('id', 'js--hover');
-  box.setAttribute('scale', "0.05 0.05 0.05");
+  let hand = document.createElement('a-obj-model');
+  hand.setAttribute('src', '#hand-obj');
+  hand.setAttribute('color', 'white');
+  hand.setAttribute('rotation', '0 90 60');
+  hand.setAttribute('position', "0.4 -0.15 -0.8");
+  hand.setAttribute('id', 'js--hover');
+  hand.setAttribute('scale', "0.05 0.05 0.05");
 
-  return box;
+  return hand;
 }
 
 function hoverHandDisappear(person){
   person.addEventListener('raycaster-intersected-cleared', function(event){
-    let box = document.getElementById('js--hover');
-    box.remove();
+    let hand = document.getElementById('js--hover');
+    hand.remove();
   });
 }
 
 function disappearAnimationWithHand(person){
-  let att = document.createAttribute('animation');
-  att.value = "property: scale; easing: linear; dur: " + durationWalk + "; to: 0 0 0";
-  person.setAttribute('animation__scale', att.value);
+  let animation = document.createAttribute('animation');
+  animation.value = "property: scale; easing: linear; dur: " + durationWalk + "; to: 0 0 0";
+  person.setAttribute('animation__scale', animation.value);
 }
 
 function removeFollowBehaviours(person){
@@ -92,4 +93,8 @@ function removeEntity(person){
       person.remove();
     }catch(error){}
   }, durationWalk);
+}
+
+function setDurationWalk(milliseconds){
+  durationWalk = milliseconds;
 }

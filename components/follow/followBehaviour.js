@@ -1,9 +1,3 @@
-AFRAME.registerComponent('range', {
-  init: function () {
-    followerGoesToOrangeRange(this.el);
-  }
-});
-
 function changeFollowDestination(follower){
   if(follower.hasAttribute('range')){
     if(!follower.hasAttribute('follow')){
