@@ -1,4 +1,4 @@
-const durationWalk = 2000;
+var durationWalk = 2000;
 
 function interactWithPeople(person){
   whenDetectedRedRangeField(person);

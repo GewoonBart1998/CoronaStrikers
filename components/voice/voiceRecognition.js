@@ -66,22 +66,26 @@ recognition.onend = function() {
 }
 
 function updateVoiceText(spokenWord){
-  let voiceText = document.getElementById('voice');
+  let voiceText = document.getElementById('js--voice');
+  let amountOfCharacters = spokenWord.length;
+  if(amountOfCharacters > 16){
+      spokenWord = spokenWord.slice(0, 16) + "...";
+  }
   voiceText.setAttribute('value', 'Spoken word: ' + spokenWord);
 }
 
 function changePlaneColorOfPlayersUIWhenCorrect(){
-  let voicePlane = document.getElementById('voice-plane');
+  let voicePlane = document.getElementById('js--voice-plane');
   voicePlane.setAttribute('material', 'shader: flat; color: yellow');
 }
 
 function changePlaneColorOfPlayersUIWhenWrong(){
-  let voicePlane = document.getElementById('voice-plane');
+  let voicePlane = document.getElementById('js--voice-plane');
   voicePlane.setAttribute('material', 'shader: flat; color: red');
 }
 
 function changePlaneColorOfPlayersUIWhenNeutral(spokenWord){
-
+  let voicePlane = document.getElementById('js--voice-plane');
   voicePlane.setAttribute('material', 'shader: flat; color: white');
   setSpokenWord("");
   updateVoiceText(getSpokenWord());

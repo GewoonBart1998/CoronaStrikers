@@ -2,7 +2,6 @@
   <head lang="nl">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <script src="components\main.js" type="text/javascript"></script>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.9/dist/aframe-particle-system-component.min.js"></script>
@@ -17,15 +16,12 @@
     <script src="components\person\personComponent.js" type="text/javascript"></script>
     <script src="components\player\playersUIBehaviour.js" type="text/javascript"></script>
     <script src="components\player\damageComponent.js" type="text/javascript"></script>
-
-    <title>Vr Web</title>
+    <title>Corona Strikes Again!</title>
   </head>
   <body>
-    <!-- scene -->
-    <a-scene id="main-scene">
+    <a-scene id="js--main-scene">
       <a-entity id="environment" environment="preset: forest; fog: false;" position="0 -0.15 0"></a-entity>
 
-      <!-- assets -->
       <a-assets>
         <a-assets-item id="hand-obj" src="models\hand.obj"></a-assets-item>
         <a-assets-item id="hart-obj" src="models\hart.obj"></a-assets-item>
@@ -35,12 +31,9 @@
         <a-assets-item id="tree-mtl" src="models\tree.mtl"></a-assets-item>
         <a-assets-item id="treeTwo-obj" src="models\treeTwo.obj"></a-assets-item>
         <a-assets-item id="treeTwo-mtl" src="models\treeTwo.mtl"></a-assets-item>
-        <img id="sky" src="/images/sky.jpg" alt="sky afbeelding">
       </a-assets>
 
-      <!-- camera -->
       <a-camera id="js--camera">
-        <!-- cursor -->
         <a-entity
         id="js--cursor"
         cursor="fuse: true; fuseTimeout: 500"
@@ -58,33 +51,28 @@
         width="1"
         value="Score: 0"></a-text>
 
-        <!-- health points -->
         <a-entity position="0 0 0">
           <a-obj-model class="heart" src="#hart-obj" color="red" rotation="0 90 0" position="-0.72 0.64 -1" scale="0.1 0.1 0.1"></a-obj-model>
           <a-obj-model class="heart" src="#hart-obj" color="red" position="-0.55 0.7 -1" rotation="0 90 0" scale="0.025 0.05 0.05"></a-obj-model>
           <a-obj-model class="heart" src="#hart-obj" color="red" position="-0.55 0.58 -1" rotation="0 90 0" scale="0.025 0.05 0.05"></a-obj-model>
         </a-entity>
 
-        <!-- voice command output -->
-        <a-entity id="voice-plane" geometry="primitive: plane" material="shader:flat; color: white" scale="0.8 0.15 1" position="0.05 0.65 -1">
-          <a-text id="voice" value="Spoken word:" scale="0.3 1.8 0.5" color="black" position="-0.45 0 0"></a-text>
+        <a-entity id="js--voice-plane" geometry="primitive: plane" material="shader:flat; color: white" scale="1 0.15 1" position="0.05 0.65 -1">
+          <a-text id="js--voice" value="Spoken word:" scale="0.3 1.8 0.5" color="black" position="-0.49 0 0"></a-text>
         </a-entity>
       </a-camera>
-      <!-- vormgeving -->
-      <!-- 1st range -->
+
       <a-ring
       rotation="-90 0 0"
       color="orange"
       position="0 0 0"></a-ring>
 
-      <!-- 2nd range -->
       <a-ring
       rotation="-90 0 0"
       scale="3 3 1"
       color="green"
       position="0 0 0"></a-ring>
 
-      <!-- ground -->
       <a-plane
       position="0 -0.1 0"
       rotation="-90 0 0"
@@ -97,11 +85,9 @@
       <a-obj-model src="#tree-obj" mtl="#tree-mtl" position="5.5 -1 5"></a-obj-model>
       <a-obj-model src="#tree-obj" mtl="#tree-mtl" position="-5.5 -1 5"></a-obj-model>
 
-
       <!-- raining particle -->
       <!--<a-entity id="rain" particle-system="preset: rain; color: #24CAFF; particleCount: 150"></a-entity> -->
 
-      <!-- collision objects -->
       <a-cylinder
       id="js--redRange"
       position="0 0.5 0"
@@ -116,7 +102,6 @@
       scale="1 0.1 1"
       radius="3"></a-cylinder>
 
-      <!-- Voice Commands Board -->
       <a-plane position="0 6.8 -3" width="6" height="4" rotation="40 0 0">
         <a-text position="0 1.5 0" align="center" value="Let them keep their distance by using these words:"></a-text>
         <a-text position="0 1 0" align="center" value="Afstand"></a-text>

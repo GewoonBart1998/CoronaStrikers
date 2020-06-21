@@ -1,3 +1,6 @@
+var orangeRangeSpeed = 0.5;
+var redRangeSpeed = 1;
+
 function changeFollowDestination(follower){
   if(follower.hasAttribute('range')){
     if(!follower.hasAttribute('follow')){
@@ -13,7 +16,7 @@ function changeFollowDestination(follower){
 function followerGoesToOrangeRange(follower){
   follower.setAttribute('follow', {
     target: '#js--orangeRange',
-    speed: 0.5
+    speed: orangeRangeSpeed
   });
 }
 
@@ -21,7 +24,15 @@ function followerGoesToRedRange(follower){
   if(follower != undefined){
     follower.setAttribute('follow', {
       target: '#js--redRange',
-      speed: 1
+      speed: redRangeSpeed
     });
   }
+}
+
+function setOrangeRangeSpeed(speed){
+  orangeRangeSpeed = speed;
+}
+
+function setRedRangeSpeed(speed){
+  redRangeSpeed = speed;
 }

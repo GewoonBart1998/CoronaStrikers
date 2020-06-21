@@ -1,5 +1,5 @@
 var spawn = null;
-const spawnDuration = 5000;
+var spawnDuration = 4000;
 
 function createPerson(){
   let createPerson = document.createElement('a-box');
@@ -17,7 +17,7 @@ function createPerson(){
 }
 
 function addPerson(createPerson){
-  document.getElementById('main-scene').appendChild(createPerson);
+  document.getElementById('js--main-scene').appendChild(createPerson);
 }
 
 function checkIfLocationIsInsideRange(){
@@ -31,7 +31,6 @@ function checkIfLocationIsInsideRange(){
      collisionBox.x + collisionBox.width > personProperties.x &&
      collisionBox.z < personProperties.z + personProperties.height &&
      collisionBox.z + collisionBox.height > personProperties.z) {
-       console.log("inside");
        personCoordinates = [personX, generateSpawnLocation(-10, -15)];
   };
 
