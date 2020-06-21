@@ -1,10 +1,8 @@
 var spawn = null;
 var spawnDuration = 4000;
 
-function createPerson(){
+function createPerson(personCoordinates){
   let createPerson = document.createElement('a-box');
-  let personCoordinates= checkIfLocationIsInsideRange();
-
   createPerson.setAttribute('class', 'js--person');
   createPerson.setAttribute('position', personCoordinates[0].toString()
   + " 0.5 " + personCoordinates[1].toString());
@@ -20,21 +18,32 @@ function addPerson(createPerson){
   document.getElementById('js--main-scene').appendChild(createPerson);
 }
 
-function checkIfLocationIsInsideRange(){
-  let personX = generateSpawnLocation(-15, 15);
+function generateSpawnLeft(){
+  let personX = generateSpawnLocation(-10, -15);
   let personZ = generateSpawnLocation(-15, 15);
-  let personCoordinates = [personX, personZ];
-  let collisionBox = {x: 0, z: 0, width: 35, height: 35}
-  let personProperties = {x: personX, z: personZ, width: 1, height: 1}
 
-  if (collisionBox.x < personProperties.x + personProperties.width &&
-     collisionBox.x + collisionBox.width > personProperties.x &&
-     collisionBox.z < personProperties.z + personProperties.height &&
-     collisionBox.z + collisionBox.height > personProperties.z) {
-       personCoordinates = [personX, generateSpawnLocation(-10, -15)];
-  };
+  return [personX, personZ];
+}
 
-  return personCoordinates;
+function generateSpawnFront(){
+  let personX = generateSpawnLocation(15, -15);
+  let personZ = generateSpawnLocation(-10, -15);
+
+  return [personX, personZ];
+}
+
+function generateSpawnRight(){
+  let personX = generateSpawnLocation(10, 15);
+  let personZ = generateSpawnLocation(-15, 15);
+
+  return [personX, personZ];
+}
+
+function generateSpawnDown(){
+  let personX = generateSpawnLocation(-15, 15);
+  let personZ = generateSpawnLocation(10, 15);
+
+  return [personX, personZ];
 }
 
 function generateSpawnLocation(min, max) {
@@ -47,7 +56,10 @@ function generateSpawnTimer(min, max) {
 
 function createSpawner(){
   spawn = setInterval(function(){
-    addPerson(createPerson());
+    addPerson(createPerson(generateSpawnLeft()));
+    addPerson(createPerson(generateSpawnFront()));
+    addPerson(createPerson(generateSpawnRight()));
+    addPerson(createPerson(generateSpawnDown()));
   }, spawnDuration);
 }
 
