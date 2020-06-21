@@ -6,7 +6,6 @@ AFRAME.registerComponent('damage', {
   },
 
   update: function(oldData){
-    console.log(this.data.depletion);
     if(this.data.depletion == "Remove Heart"){
       depleteHearts();
     }

@@ -47,7 +47,7 @@ recognition.onstart = function() {
 
 recognition.onresult = function(event){
   let spokenWord = event.results[0][0].transcript;
-  console.log(spokenWord);
+  document.getElementById('voice').setAttribute('value', 'Spoken word: ' + spokenWord);
   for(let index = 0; index < spacing.length; index++){
     if(spokenWord == spacing[index]){
       spokenWord = "";

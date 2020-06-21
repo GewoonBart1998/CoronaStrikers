@@ -19,7 +19,7 @@ function changeFollowDestination(follower){
 function followerGoesToOrangeRange(follower){
   follower.setAttribute('follow', {
     target: '#js--orangeRange',
-    speed: 0.8
+    speed: 0.5
   });
 }
 
