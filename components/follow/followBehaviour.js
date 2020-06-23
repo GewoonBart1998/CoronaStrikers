@@ -9,6 +9,7 @@ function changeFollowDestination(follower){
       }, 3500);
       follower.removeAttribute('range');
       addDamageComponent(follower, 'depletion: No Damage');
+      playsound();
     }
   }
 }
@@ -35,4 +36,10 @@ function setOrangeRangeSpeed(speed){
 
 function setRedRangeSpeed(speed){
   redRangeSpeed = speed;
+}
+
+function playsound(){
+  var sound = document.getElementById("hello");
+
+  sound.play();
 }
