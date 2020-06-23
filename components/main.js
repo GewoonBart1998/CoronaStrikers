@@ -6,6 +6,7 @@ window.onload = function(){
   let game = document.getElementById("gameScene");
   let hearts = document.getElementById("js--hearts");
   let voice = document.getElementById("js--voice-plane");
+  let uitleg = document.getElementById("uitlegScene");
 
     for (let i = 0; i < options.length; i++) {
         options[i].addEventListener('click', function(evt) {
@@ -38,16 +39,9 @@ window.onload = function(){
           speechRecognitionIsSupported();
           break;
         case "uitleg":
-          cursor.setAttribute("raycaster", "objects: js--person");
-          score.setAttribute("visible", "true");
           menu.setAttribute("visible", "false");
-          game.setAttribute("visible", "true");
-          hearts.setAttribute("visible", "true");
-          voice.setAttribute("visible", "true");
-          attachFollowToFollower(getFollowers());
-          observeAttributesOfEntity(getFollowers());
-          interactWithPeople(getPeople());
-          speechRecognitionIsSupported();
+          uitleg.setAttribute("visible", "true");
+
           break;
         default:
       }
