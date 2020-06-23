@@ -57,8 +57,8 @@ addListeners();
 };
 
 function setSpeed(){
-  setOrangeRangeSpeed(1);
-  setRedRangeSpeed(1.2);
+  setOrangeRangeSpeed(0.7);
+  setRedRangeSpeed(0.9);
   setSpawnDuration(8000);
   setDurationWalk(1500);
 }

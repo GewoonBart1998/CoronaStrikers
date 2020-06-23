@@ -22,6 +22,7 @@ function depleteHearts(){
     heart[heart.length -1].remove();
     if(heart.length == 0){
       stopSpawner();
+      showGameOvescreen();
     }
   }
 }
