@@ -42,16 +42,17 @@
         position="0 0 -0.5"
         animation__click = "property: scale; startEvents: mouseenter; easing: easeOutCubic; dur: 500; from: 1 1 1; to: 1.4 1.4 1.4"
         animation__mouseleave = "property: scale; startEvents: mouseleave; easing: easeOutCubic; dur: 500; to: 1 1 1"
-        raycaster="objects: .js--person">
+        raycaster="objects: .js--option">
         </a-entity>
 
         <a-text
         id="js--score"
         position="0.3 0.35 -0.5"
         width="1"
+        visible="false"
         value="Score: 0"></a-text>
 
-        <a-entity position="0 0 0">
+        <a-entity position="0 0 0" visible="false">
           <a-obj-model class="heart" src="#hart-obj" color="red" rotation="0 90 0" position="-0.72 0.64 -1" scale="0.1 0.1 0.1"></a-obj-model>
           <a-obj-model class="heart" src="#hart-obj" color="red" position="-0.55 0.7 -1" rotation="0 90 0" scale="0.025 0.05 0.05"></a-obj-model>
           <a-obj-model class="heart" src="#hart-obj" color="red" position="-0.55 0.58 -1" rotation="0 90 0" scale="0.025 0.05 0.05"></a-obj-model>
@@ -61,6 +62,11 @@
           <a-text id="js--voice" value="Spoken word:" scale="0.3 1.8 0.5" color="black" position="-0.49 0 0"></a-text>
         </a-entity>
       </a-camera>
+
+      <a-entity id="menuScene" visible="true">
+        <a-text class="js--option" value="Start" scale="2 2 1" position="0 2 -4"></a-text>
+        <a-text class="js--option" value="Uitleg" scale="2 2 1" position="-2 2 -4"></a-text>
+      </a-entity>
 
       <a-ring
       rotation="-90 0 0"
