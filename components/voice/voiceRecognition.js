@@ -4,7 +4,7 @@ var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEv
 
 var recognition = new SpeechRecognition();
 var speechRecognitionList = new SpeechGrammarList();
-var spacing = [ 'afstand' , 'Corona' , 'stop', 'anderhalve meter', 'bent u nou helemaal betoeterd'];
+var spacing = [ 'afstand' , 'Corona' , 'stop', 'anderhalve meter', 'pardon'];
 var correctWord = false;
 var spokenWord = "";
 
@@ -71,7 +71,7 @@ function updateVoiceText(spokenWord){
   if(amountOfCharacters > 16){
       spokenWord = spokenWord.slice(0, 16) + "...";
   }
-  voiceText.setAttribute('value', 'Spoken word: ' + spokenWord);
+  voiceText.setAttribute('value', 'Command: ' + spokenWord);
 }
 
 function changePlaneColorOfPlayersUIWhenCorrect(){
