@@ -4,6 +4,8 @@ window.onload = function(){
   let score = document.getElementById("js--score");
   let menu = document.getElementById("menuScene");
   let game = document.getElementById("gameScene");
+  let hearts = document.getElementById("js--hearts");
+  let voice = document.getElementById("js--voice-plane");
 
     for (let i = 0; i < options.length; i++) {
         options[i].addEventListener('click', function(evt) {
@@ -25,9 +27,14 @@ window.onload = function(){
           score.setAttribute("visible", "true");
           menu.setAttribute("visible", "false");
           game.setAttribute("visible", "true");
+          hearts.setAttribute("visible", "true");
+          voice.setAttribute("visible", "true");
           attachFollowToFollower(getFollowers());
           observeAttributesOfEntity(getFollowers());
           interactWithPeople(getPeople());
+          speechRecognitionIsSupported();
+          setSpeed();
+          createSpawner();
           speechRecognitionIsSupported();
           break;
         case "uitleg":
@@ -35,29 +42,16 @@ window.onload = function(){
           score.setAttribute("visible", "true");
           menu.setAttribute("visible", "false");
           game.setAttribute("visible", "true");
-          attachFollowToFollower(getFollowers());
-          observeAttributesOfEntity(getFollowers());
-          interactWithPeople(getPeople());
-          speechRecognitionIsSupported();
-          break;
-        case "tutorial":
-          cursor.setAttribute("raycaster", "objects: js--person");
-          score.setAttribute("visible", "true");
-          menu.setAttribute("visible", "false");
-          game.setAttribute("visible", "true");
+          hearts.setAttribute("visible", "true");
+          voice.setAttribute("visible", "true");
           attachFollowToFollower(getFollowers());
           observeAttributesOfEntity(getFollowers());
           interactWithPeople(getPeople());
           speechRecognitionIsSupported();
           break;
         default:
-
       }
-
     }
-  setSpeed();
-  createSpawner();
-  speechRecognitionIsSupported();
 };
 
 function setSpeed(){
