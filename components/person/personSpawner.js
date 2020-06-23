@@ -2,14 +2,18 @@ var spawn = null;
 var spawnDuration = 4000;
 
 function createPerson(personCoordinates){
-  let createPerson = document.createElement('a-box');
+  let createPerson = document.createElement("a-obj-model");
   createPerson.setAttribute('class', 'js--person');
   createPerson.setAttribute('position', personCoordinates[0].toString()
-  + " 0.5 " + personCoordinates[1].toString());
+  + " 0.1 " + personCoordinates[1].toString());
   createPerson.setAttribute('color', 'brown');
   createPerson.setAttribute('person', '');
   createPerson.setAttribute('range', '');
   createPerson.setAttribute('observe', '');
+  createPerson.setAttribute('scale', "0.5 0.5 0.5");
+  createPerson.setAttribute('src', "#Person-obj");
+  createPerson.setAttribute('sound', functionName());
+
 
   return createPerson;
 }
@@ -82,4 +86,10 @@ function getSpawn(){
 
 function setSpawnDuration(milliseconds){
   spawnDuration = milliseconds;
+}
+
+function functionName() {
+  let sound = "src: sound/sound" + Math.floor(Math.random() * 5).toString() + ".mp3; on: click";
+
+  return sound;
 }
