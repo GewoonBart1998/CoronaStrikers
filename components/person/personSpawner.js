@@ -2,10 +2,12 @@ var spawn = null;
 var spawnDuration = 4000;
 
 function createPerson(personCoordinates){
-  let createPerson = document.createElement('a-box');
-  createPerson.setAttribute('class', 'js--person');
+  let createPerson = document.createElement('a-obj-model');
+  createPerson.setAttribute('class', 'js--person clickable');
   createPerson.setAttribute('position', personCoordinates[0].toString()
-  + " 0.5 " + personCoordinates[1].toString());
+  + " -0.3 " + personCoordinates[1].toString());
+  createPerson.setAttribute('src', '#persoon-obj');
+  createPerson.setAttribute('scale', '0.5 0.5 0.5');
   createPerson.setAttribute('color', 'brown');
   createPerson.setAttribute('person', '');
   createPerson.setAttribute('range', '');

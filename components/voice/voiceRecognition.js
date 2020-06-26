@@ -25,6 +25,10 @@ function initializeRecognition(){
   recognition.maxAlternatives = 1;
 }
 
+function stopVoiceRecognition(){
+  recognition.stop();
+}
+
 function startVoiceRecognition(){
   addGrammar();
   initializeRecognition();

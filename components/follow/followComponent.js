@@ -32,7 +32,7 @@ AFRAME.registerComponent('follow', {
 
     this.el.setAttribute('position', {
       x: currentPosition.x + directionVec3.x,
-      y: 0.5,
+      y: -0.3,
       z: currentPosition.z + directionVec3.z
     });
   }
