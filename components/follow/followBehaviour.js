@@ -9,6 +9,7 @@ function changeFollowDestination(follower){
       }, 3500);
       follower.removeAttribute('range');
       addDamageComponent(follower, 'depletion: No Damage');
+      playSound();
     }
   }
 }

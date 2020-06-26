@@ -12,6 +12,7 @@ function createPerson(personCoordinates){
   createPerson.setAttribute('person', '');
   createPerson.setAttribute('range', '');
   createPerson.setAttribute('observe', '');
+  createPerson.setAttribute('sound', randomSound());
 
   return createPerson;
 }
