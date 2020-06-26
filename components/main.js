@@ -1,12 +1,11 @@
 window.onload = function(){
-  setSpeed();
-  createSpawner();
-  speechRecognitionIsSupported();
+  loadDefaultLevel();
+  menu();
 };
 
 function setSpeed(){
-  setOrangeRangeSpeed(1);
-  setRedRangeSpeed(1.2);
+  setOrangeRangeSpeed(0.5);
+  setRedRangeSpeed(1);
   setSpawnDuration(8000);
   setDurationWalk(1500);
 }

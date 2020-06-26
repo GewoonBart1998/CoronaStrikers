@@ -17,11 +17,14 @@ function setDamageComponentToHeartRemoval(element){
 }
 
 function depleteHearts(){
-  let heart = document.getElementsByClassName('heart');
+  let mainScene = document.getElementById('js--main-scene');
+  let heart = document.getElementsByClassName('js--heart');
   if(heart[heart.length - 1] != undefined){
     heart[heart.length -1].remove();
     if(heart.length == 0){
       stopSpawner();
+      stopVoiceRecognition();
+      mainScene.appendChild(createGameOver());
     }
   }
 }
