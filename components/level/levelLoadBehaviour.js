@@ -99,6 +99,7 @@ function createHouse(position, rotation){
   house.setAttribute('mtl', '#house-mtl');
   house.setAttribute('position', position);
   house.setAttribute('rotation', rotation);
+    house.setAttribute('scale', '0.009 0.009 0.009');
   house.setAttribute('class', 'js--removal');
 
   return house;
