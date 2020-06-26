@@ -84,7 +84,7 @@ function createTree(position){
 }
 
 function createTreeTwo(position){
-  let tree = document.createElement('a-obj-model');
+  let tree = document.createElement( 'a-obj-model');
   tree.setAttribute('src', '#treeTwo-obj');
   tree.setAttribute('mtl', '#treeTwo-mtl');
   tree.setAttribute('position', position);
