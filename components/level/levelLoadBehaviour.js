@@ -240,6 +240,16 @@ function createExplain2(){
   return explain2;
 }
 
+function createLantaarn(position){
+  let lantaarn = document.createElement('a-obj-model');
+  lantaarn.setAttribute('src', '#Lantaarn-obj');
+  lantaarn.setAttribute('mtl', '#Lantaarn-mtl');
+  lantaarn.setAttribute('position', position);
+  lantaarn.setAttribute('scale', '0.5 0.5 0.5');
+
+  return lantaarn;
+}
+
 function createThumbnail(id, position, source){
   let thumbnail = document.createElement('a-plane');
   thumbnail.setAttribute('class', 'clickable');
@@ -285,6 +295,12 @@ function loadForestLevel(){
   mainScene.appendChild(createTreeTwo('10 -0.7 -15'));
   mainScene.appendChild(createTreeTwo('-6 -1 -17'));
   mainScene.appendChild(createTreeTwo('-13.5 -1 -10'));
+  mainScene.appendChild(createLantaarn('-17.5 -1 13'));
+  mainScene.appendChild(createLantaarn('18.5 -1 10'));
+  mainScene.appendChild(createLantaarn('3 -1 -20'));
+  mainScene.appendChild(createLantaarn('17.5 -1 -13'));
+  mainScene.appendChild(createLantaarn('-18.5 -1 -10'));
+  mainScene.appendChild(createLantaarn('-25 -1 5'));
   mainScene.appendChild(createHouse('1 -1 21.5', '0 270 0'));
   mainScene.appendChild(createRedRange());
   mainScene.appendChild(createOrangeRange());
